@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+        <main>
+        
+             {% block body  %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class=" btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        
+                        </div>
+                    {%endfor%}
+                {% endif %}
+                {%for a in list%}
+                 
+                        <div class="row mt-3 justify-content-center">
+                                <div class="col-md-3 d-flex justify-content-center">
+                                    <img class="card" height="200" width="200" src="{{ a.Item_image }}" alt="Item Image">
+                                </div>
+                                <div class="col-md-4 d-flex flex-column justify-content-center">
+                                    <h3>{{ a.Item_name }}</h3>
+                                    <h5>{{ a.Item_description }}</h5>
+                                    <h6>${{ a.Item_price }}</h6>
+                                </div>
+                                <div class="col-md-3 d-flex justify-content-center align-items-center">
+                                    <a href="{% url 'details' a.id %}" class="btn btn-success d-block">Details</a>
+                                    
+                                </div>
+                            </div>
+                    
+                {%endfor%}
+             {% endblock  %}
+        </main>
+</body>    
+  ccc 

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block body %}
+  <div class= "container">
+    <form method = 'POST'>
+        {% csrf_token %}
+            <h2>Are you sure you want to delete {{delete.Item_name}}?</h2>
+            <button type = "submit" class="btn btn-danger">Delete</button>
+    </form>
+  </div>
+{% endblock body %}
+
+
+
+
