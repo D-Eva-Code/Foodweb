@@ -6,24 +6,113 @@
 
 body{
     margin: 0px;
-    
-    
+    background: linear-gradient(to right, #f7f7f7, #ffffff);
 }
 
 .nav-link:hover{
     transition: color 0.3s ease, background-color 0.3s ease;
     background-color: gray;
-
 }
+
 .nav-link{
     font-family: 'Lucida Sans';
-}
+} 
 
 .button{
     background-color: red;
-
 }
 
+.register {
+    /* color: #ff5722; Fallback solid color */
+    background: linear-gradient(to right, #ff6822,#000000, #000000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold; 
+    font-size: 2.5rem; 
+    color: transparent;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+    .food-image {
+        position: relative;
+      }
+      
+      .food-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        filter: brightness(80%) contrast(100%) grayscale(30%); 
+        transition: filter 0.3s ease-in-out;
+      }
+      
+
+      .food-image::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+        border-radius: 10px;
+        z-index: 1; /* Ensures overlay is above the image */
+        transition: background 0.3s ease-in-out;
+      }
+      
+ 
+      .food-image .main-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 50px;
+        font-weight: 700;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 20px 30px;
+        border-radius: 10px;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); 
+        z-index: 2;
+        opacity: 0;
+        transition: opacity 0.4s ease, background-color 0.3s ease;
+        line-height: 1.2;
+      }
+      
+      .food-image .sub-text {
+        position: absolute;
+        top: 55%; 
+        left: 50%;
+        transform: translateX(-50%);
+        color: #FFD700; 
+        font-size: 18px; 
+        font-weight: 400;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 10px 20px;
+        border-radius: 8px;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+        z-index: 2;
+        opacity: 0;
+        transition: opacity 0.3s ease, background-color 0.3s ease;
+      }
+      .food-image:hover .main-text {
+        opacity: 1; /* Fade-in effect on hover */
+        background-color: rgba(0, 0, 0, 0.75); /* Darker background on hover */
+      }
+      .food-image:hover .sub-text {
+        opacity: 1; /* Fade-in for sub-text */
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+   
+      .food-image:hover img {
+        filter: brightness(100%) contrast(110%) grayscale(0); /* Lighten image on hover */
+      }
+      
+  
+   
+  
 /* .bg-gradient{
     height: 100vh;
     width: 100%;

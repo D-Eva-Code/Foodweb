@@ -4,21 +4,31 @@
 
 
 {% block title %}
- <h1>Register</h1>
+ <div class = "container-fluid">
+  <h1 class = "register">Register</h1>
+ </div>
 {% endblock title %}
 
 {% block body %}
-  <div class = "container mt-4 row">
-    <div class = "col-10">
+  <div class="container-fluid mt-4">
+   <div class = "row">
+    <div class = "col-lg-7">
      <form method = "POST">
       {% csrf_token %}
         {{form| crispy}}
             <button type = "submit" class = "btn btn-primary shadow sm-shadow">Sign up</button>
       </form>
     </div>
-      <div class = "col-2">
-        <img src ="{% static 'food2.jpeg' %}" alt = "register image" width= 1000 height = 900>
+    <div class="col-lg-5 d-flex align-items-center">
+      <div class="food-image w-100 text-center">
+        <img class="img-fluid rounded" src="{% static 'food2.jpeg' %}" alt="register image">
+        <div class = "main-text"> Register With Us</div>
+        <div class="sub-text">
+          Discover the best food experience on <b>The Food Web.</b>
+        </div>
       </div>
+    </div>
+  </div>
 </div>
 
 {% endblock %}
